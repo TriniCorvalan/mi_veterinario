@@ -25,10 +25,30 @@ class Pet < ApplicationRecord
   end
 
   def max_weight
+    
+    weight = 0
+
+    self.pet_histories.map do |pet_h|
+      if pet_h.weight > weight
+        weight = pet_h.weight
+      end
+    end
+
+    weight
     #TODO-implement
   end
 
   def max_height
+
+    heigth = 0
+
+    self.pet_histories.map do |pet_h|
+      if pet_h.heigth > heigth
+        heigth = pet_h.heigth
+      end
+    end
+
+    heigth
     #TODO-implement
   end
 
