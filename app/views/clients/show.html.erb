@@ -16,18 +16,23 @@
 </p>
 
 <table>
-    <thead>
-      <tr>
-        <th>Pets name</th>
-      </tr>
-    </thead>
-  
-    <tbody>
-      <tr>
-        <td><%= @client.pet_list %></td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Peso max</th>
+      <th>Altura max</th>
+    </tr>
+  </thead>
 
-<%= link_to 'Edit', edit_pet_history_path(@pet_history) %> |
-<%= link_to 'Back', pet_histories_path %>
+  <tbody>
+    <% @pets.each do |pet| %>
+    <tr>
+      <td><%= pet.name %></td>
+      <td><%= pet.max_weight %></td>
+      <td><%= pet.max_height %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', clients_path %>

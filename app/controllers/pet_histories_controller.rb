@@ -1,6 +1,5 @@
 class PetHistoriesController < ApplicationController
   before_action :set_pet_history, only: [:show, :edit, :update, :destroy]
-  before_action :pet_history_params
 
   # GET /pet_histories
   # GET /pet_histories.json

@@ -36,5 +36,25 @@
   </tbody>
 </table>
 
+<table>
+  <thead>
+    <tr>
+      <th>Peso</th>
+      <th>Altura</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pet_histories.each do |pet_h| %>
+    <tr>
+      <td><%= pet_h.weight %></td>
+      <td><%= pet_h.heigth %></td>
+      <td><%= pet_h.created_at.strftime("%D") %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>

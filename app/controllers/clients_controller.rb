@@ -1,7 +1,6 @@
 class ClientsController < ApplicationController
 
   before_action :set_client, only: [:show, :edit, :update, :destroy]
-  before_action :client_params
 
 
   def index
@@ -9,12 +8,11 @@ class ClientsController < ApplicationController
   end
 
   def show
-    @clients = Client.find(params[:id])
+    @pets = @client.pets
   end
 
   def new
     @client = Client.new
-    @pets = Pet.all
   end
 
   def edit

@@ -1,14 +1,8 @@
-class Client < ApplicationRecord
+class Client < ApplicationRecord 
+    validates :name, presence: true
     has_many :pets
 
     def pet_count
-    end
-
-    def pet_list
-        @pets.each do |pet|
-            pet.name
-            pet.max_weight
-            pet.max_height
-        end
+        self.pets.count
     end
 end
